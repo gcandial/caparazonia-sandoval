@@ -19,10 +19,10 @@ function ItemCount({stock, inicial}) {
     
     return (
     <>
-        <p>Artículos disponibles: {articulosRestantes}</p>
         <Button 
             onClick={quitaArticulo}
             disabled={!hayArticulosAgregados}
+            variant="success"
         >
             <FontAwesomeIcon icon={faMinus} />  
         </Button>
@@ -30,6 +30,7 @@ function ItemCount({stock, inicial}) {
         <Button 
             onClick={agregaArticulo}
             disabled={!hayArticulos}
+            variant="success"
         >
             <FontAwesomeIcon icon={faPlus} />  
         </Button>
@@ -38,9 +39,11 @@ function ItemCount({stock, inicial}) {
             onClick={agregaCarrito}
             disabled={!hayArticulosAgregados}
             style={{margin:'5px'}}
+            variant="success"
         >
             Agregar al carrito  
         </Button>
+        <p>Artículos disponibles: {articulosRestantes}</p>
         <p>{mensajeCarrito}</p>
     </>
   );
