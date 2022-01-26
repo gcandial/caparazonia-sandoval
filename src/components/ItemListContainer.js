@@ -31,7 +31,7 @@ function ItemListContainer() {
   return (
     <>
       {
-        (llegoPromesa) ? arregloCatalogoProductos.map(item => <ItemList items={item} />) : <h1>Cargando...</h1>
+        (llegoPromesa) ? arregloCatalogoProductos.map(item => <ItemList key={item.id} items={item} />) : <h1>Cargando...</h1>
       }
     </>
   );

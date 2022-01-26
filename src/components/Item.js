@@ -12,7 +12,7 @@ function Item({ item }) {
                         <h6>$ {item.price} MXN</h6>
                     </Card.Body>
                     <Card.Footer>
-                        <Button variant="secondary">Ver detalles</Button>
+                        <Button variant="secondary" href={'item/'+item.id}>Ver detalles</Button>
                     </Card.Footer>
                 </Card>
             </Col>
