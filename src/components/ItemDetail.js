@@ -22,7 +22,7 @@ function ItemDetail({ producto }) {
                         </Col>
                     </>
                     :
-                    <>Cargando...</>
+                    <><h1>Cargando...</h1></>
             }
         </>
     )

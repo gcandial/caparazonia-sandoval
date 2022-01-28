@@ -11,9 +11,11 @@ function NavBar() {
           <ReactBootstrap.Navbar.Collapse id="caparazonia-navbar" className="justify-content-end">
             <ReactBootstrap.Nav className="me-auto">
               <ReactBootstrap.Nav.Link href="/">Inicio</ReactBootstrap.Nav.Link>
-              <ReactBootstrap.Nav.Link href="https://github.com/gcandial/caparazonia-sandoval">Productos</ReactBootstrap.Nav.Link>
-              <ReactBootstrap.Nav.Link href="https://github.com/gcandial/caparazonia-sandoval">Inventario</ReactBootstrap.Nav.Link>
-              <ReactBootstrap.Nav.Link href="https://github.com/gcandial/caparazonia-sandoval">Nosotros</ReactBootstrap.Nav.Link>
+              <ReactBootstrap.NavDropdown title="Categorías" id="basic-nav-dropdown">
+                <ReactBootstrap.NavDropdown.Item href="/categoria/carnazas">Carnazas</ReactBootstrap.NavDropdown.Item>
+                <ReactBootstrap.NavDropdown.Item href="/categoria/articulos-perro">Artículos para perro</ReactBootstrap.NavDropdown.Item>
+                <ReactBootstrap.NavDropdown.Item href="/categoria/juguetes-perro">Juguetes para perro</ReactBootstrap.NavDropdown.Item>
+              </ReactBootstrap.NavDropdown>
             </ReactBootstrap.Nav>
             <ReactBootstrap.Navbar.Text >
               <CartWidget />

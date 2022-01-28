@@ -1,7 +1,7 @@
 import { Card, Button, Col } from 'react-bootstrap';
-import ItemCount from './ItemCount';
 
 function Item({ item }) {
+    console.log(item.id)
     return (
         <>
             <Col style={{ padding: '3px', margin: '5px' }}>
@@ -10,9 +10,10 @@ function Item({ item }) {
                     <Card.Img variant="top" src={item.pictureURL} />
                     <Card.Body>
                         <h6>$ {item.price} MXN</h6>
+                        <p>Artículos disponibles: {item.stock}</p>
                     </Card.Body>
                     <Card.Footer>
-                        <Button variant="secondary" href={'item/'+item.id}>Ver detalles</Button>
+                        <Button variant="secondary" href={'/item/'+item.id}>Ver detalles</Button>
                     </Card.Footer>
                 </Card>
             </Col>
