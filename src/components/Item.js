@@ -1,7 +1,6 @@
 import { Card, Button, Col } from 'react-bootstrap';
 
 function Item({ item }) {
-    console.log(item.id)
     return (
         <>
             <Col style={{ padding: '3px', margin: '5px' }}>

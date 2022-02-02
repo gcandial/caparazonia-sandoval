@@ -1,24 +1,37 @@
-import { Card, Col } from 'react-bootstrap';
+import { useState } from 'react';
+import { Card, Col, Row } from 'react-bootstrap';
 import ItemCount from './ItemCount';
 
 function ItemDetail({ producto }) {
+
+    const [contador, setContador] = useState(0);
+
+    const [mensajeCarrito, setMensajeCarrito] = useState('');
+    const agregaCarrito = () => setMensajeCarrito("¡Se agregaron " + contador + " artículo(s) al carrito!");
+
     return (
         <>
             {
                 (producto.id) ?
                     <>
-                        <Col style={{ padding: '3px', margin: '5px' }}>
-                            <Card style={{ width: '18rem', textAlign: 'center' }}>
-                                <Card.Header><h5>{producto.title}</h5></Card.Header>
-                                <Card.Img variant="top" src={producto.pictureURL} />
-                                <Card.Body>
-                                    <h6>$ {producto.price} MXN</h6>
-                                    <ItemCount stock={producto.stock} inicial={1}></ItemCount>
-                                </Card.Body>
-                                <Card.Footer>
-                                    <p>{producto.description}</p>
-                                </Card.Footer>
-                            </Card>
+                        <Col style={{ padding: '5px', margin: '10px' }}>
+                            <Row>
+                                <Col>
+                                    <Card.Img variant="top" src={producto.pictureURL} />
+                                </Col>
+                                <Col>
+                                    <Card>
+                                        <Card.Body>
+                                            <Card.Title><h2>{producto.title}</h2></Card.Title>
+                                            <h4>$ {producto.price} MXN</h4>
+                                            <ItemCount stock={producto.stock} contador={contador} setContador={setContador} agregaCarrito={agregaCarrito} mensajeCarrito={mensajeCarrito}></ItemCount>
+                                        </Card.Body>
+                                        <Card.Footer>
+                                            <small className="text-muted">Última actualización hace 1 minuto</small>
+                                        </Card.Footer>
+                                    </Card>
+                                </Col>
+                            </Row>
                         </Col>
                     </>
                     :

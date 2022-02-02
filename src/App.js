@@ -32,6 +32,9 @@ function App() {
                 <Categoria />
               </Row>
             </Route>
+            {/* Ruta Cart */}
+            <Route path="/cart">
+            </Route>
           </Switch>
         </BrowserRouter>
       </Container>
