@@ -8,6 +8,7 @@ function ItemDetailContainer() {
     const [llegoPromesa, setLlegoPromesa] = useState(false);
 
     useEffect(() => {
+        setLlegoPromesa(false);
         const promesaProductos = new Promise((resolve, reject) => {
             setTimeout(() => {
                 let arregloProductos = [
@@ -21,13 +22,13 @@ function ItemDetailContainer() {
                     { id: '8', idCategory: 'juguetes-perro', title: 'Nudo para perro', description: 'Nudo para que tu perro juegue y puedas jalar o lo pueda compartir con otro perro', price: 120.00, stock: 9, pictureURL: 'https://picsum.photos/700/400?random' }
                 ];
                 resolve(arregloProductos);
-            }, 2000);
+            }, 1000);
         })
 
         promesaProductos
             .then(res => {
                 setArregloCatalogoProductos(res.filter(item => item.idCategory === categoryId));
-                setLlegoPromesa(true)
+                setLlegoPromesa(true);
             })
             .catch(err => { console.log('Hubo un error al obtener el arreglo ' + err) })
     }, [categoryId]);

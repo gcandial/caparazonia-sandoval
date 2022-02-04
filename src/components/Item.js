@@ -1,4 +1,5 @@
 import { Card, Button, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 function Item({ item }) {
     return (
@@ -12,7 +13,9 @@ function Item({ item }) {
                         <p>Artículos disponibles: {item.stock}</p>
                     </Card.Body>
                     <Card.Footer>
-                        <Button variant="secondary" href={'/item/'+item.id}>Ver detalles</Button>
+                        <Link to={'/item/' + item.id}>
+                            <Button variant="secondary">Ver detalles</Button>
+                        </Link>
                     </Card.Footer>
                 </Card>
             </Col>

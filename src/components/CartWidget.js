@@ -1,11 +1,18 @@
-import React from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+import React, { useContext } from "react";
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { cartContext } from "../context/CartProvider";
 
 function CartWidget() {
+
+  const { cart } = useContext(cartContext);
+
   return (
     <>
-      <a href="/cart"><FontAwesomeIcon icon={faShoppingCart} /> </a>
+      <Link to="/cart">
+        <span><FontAwesomeIcon icon={faShoppingCart} /> {cart.length}</span>
+      </Link>
     </>
   );
 }

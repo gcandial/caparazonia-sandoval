@@ -1,5 +1,8 @@
 import React, { useContext } from "react";
+import { Button } from 'react-bootstrap';
 import { cartContext } from "../context/CartProvider";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 const CartItem = ({ article }) => {
 
@@ -7,9 +10,14 @@ const CartItem = ({ article }) => {
 
     return (
         <>
-            <h3>{article.item.title}</h3>
-            <p>quantity: {article.count}</p>
-            <button onClick={() => removeItem(article.item.id)} variant="danger">Delete</button>
+            <tr>
+                <td>{article.item.title}</td>
+                <td>{article.quantity}</td>
+                <td>$ {article.item.price} MXN</td>
+                <td>$ {article.item.price * article.quantity} MXN</td>
+                <td><Button onClick={() => removeItem(article.item.id)} variant="danger"><FontAwesomeIcon icon={faTrash} /></Button></td>
+            </tr>
+
         </>
     )
 };

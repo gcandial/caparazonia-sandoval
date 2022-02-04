@@ -2,49 +2,41 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { Container, Row } from 'react-bootstrap';
-import NavBar from './components/NavBar';
 import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import Categoria from './components/Categoria';
+import NavBar from './components/NavBar';
 import Cart from './components/Cart';
 import CartContext from './context/CartProvider';
 
 function App() {
   return (
     <>
-      <NavBar />
-      <Container>
-        <CartContext>
-          <BrowserRouter>
+      <CartContext>
+        <BrowserRouter>
+          <NavBar />
+          <Container>
             <Switch>
               {/* Ruta Inicio */}
               <Route exact path="/">
-                <Row>
-                  <ItemListContainer />
-                </Row>
+                <Row><ItemListContainer /></Row>
               </Route>
               {/* Ruta Producto */}
               <Route path="/item/:itemId">
-                <Row>
-                  <ItemDetailContainer />
-                </Row>
+                <Row><ItemDetailContainer /></Row>
               </Route>
               {/* Ruta Categoría */}
               <Route path="/categoria/:categoryId">
-                <Row>
-                  <Categoria />
-                </Row>
+                <Row><Categoria /></Row>
               </Route>
               {/* Ruta Cart */}
               <Route path="/cart">
-                <Row>
-                  <Cart />
-                </Row>
+                <Row><Cart /></Row>
               </Route>
             </Switch>
-          </BrowserRouter>
-        </CartContext>
-      </Container>
+          </Container>
+        </BrowserRouter>
+      </CartContext>
     </>
   );
 }

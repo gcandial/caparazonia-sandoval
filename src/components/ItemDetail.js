@@ -11,7 +11,7 @@ function ItemDetail({ producto }) {
 
     const [mensajeCarrito, setMensajeCarrito] = useState('');
     const agregaCarrito = () => {
-        addItem(1, 2);
+        addItem(producto, contador);
         setMensajeCarrito("¡Se agregaron " + contador + " artículo(s) al carrito!")
     };
 
