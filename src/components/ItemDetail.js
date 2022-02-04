@@ -1,13 +1,19 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Card, Col, Row } from 'react-bootstrap';
 import ItemCount from './ItemCount';
+import { cartContext } from "../context/CartProvider";
 
 function ItemDetail({ producto }) {
 
-    const [contador, setContador] = useState(0);
+    const { addItem } = useContext(cartContext);
+
+    const [contador, setContador] = useState(1);
 
     const [mensajeCarrito, setMensajeCarrito] = useState('');
-    const agregaCarrito = () => setMensajeCarrito("¡Se agregaron " + contador + " artículo(s) al carrito!");
+    const agregaCarrito = () => {
+        addItem(1, 2);
+        setMensajeCarrito("¡Se agregaron " + contador + " artículo(s) al carrito!")
+    };
 
     return (
         <>

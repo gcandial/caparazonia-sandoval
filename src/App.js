@@ -6,37 +6,44 @@ import NavBar from './components/NavBar';
 import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import Categoria from './components/Categoria';
+import Cart from './components/Cart';
+import CartContext from './context/CartProvider';
 
 function App() {
   return (
     <>
       <NavBar />
       <Container>
-        <BrowserRouter>
-          <Switch>
-            {/* Ruta Inicio */}
-            <Route exact path="/">
-              <Row>
-                <ItemListContainer />
-              </Row>
-            </Route>
-            {/* Ruta Producto */}
-            <Route path="/item/:itemId">
-              <Row>
-                <ItemDetailContainer />
-              </Row>
-            </Route>
-            {/* Ruta Categoría */}
-            <Route path="/categoria/:categoryId">
-              <Row>
-                <Categoria />
-              </Row>
-            </Route>
-            {/* Ruta Cart */}
-            <Route path="/cart">
-            </Route>
-          </Switch>
-        </BrowserRouter>
+        <CartContext>
+          <BrowserRouter>
+            <Switch>
+              {/* Ruta Inicio */}
+              <Route exact path="/">
+                <Row>
+                  <ItemListContainer />
+                </Row>
+              </Route>
+              {/* Ruta Producto */}
+              <Route path="/item/:itemId">
+                <Row>
+                  <ItemDetailContainer />
+                </Row>
+              </Route>
+              {/* Ruta Categoría */}
+              <Route path="/categoria/:categoryId">
+                <Row>
+                  <Categoria />
+                </Row>
+              </Route>
+              {/* Ruta Cart */}
+              <Route path="/cart">
+                <Row>
+                  <Cart />
+                </Row>
+              </Route>
+            </Switch>
+          </BrowserRouter>
+        </CartContext>
       </Container>
     </>
   );
