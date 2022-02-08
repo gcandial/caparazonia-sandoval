@@ -1,8 +1,10 @@
 import React, { useContext } from "react";
 import { Link } from 'react-router-dom';
-import { Button, Col, Row } from 'react-bootstrap';
+import { Button, Col, Row, Card } from 'react-bootstrap';
 import { cartContext } from "../context/CartProvider";
 import CartItem from "./CartItem";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSadTear } from '@fortawesome/free-solid-svg-icons';
 
 const Cart = () => {
 
@@ -15,19 +17,25 @@ const Cart = () => {
                     <>
                         <Row className="text-center">
                             <Col>
-                                <p className="mt-15">Aún no hay productos agregados</p>
-                                <Link to='/'>
-                                    <Button variant="primary">
-                                        Ir a productos
-                                    </Button>
-                                </Link>
+                                <Card className="mt-15" border="secondary">
+                                    <Card.Body>
+                                        <Card.Title>
+                                            Aún no hay productos agregados <FontAwesomeIcon icon={faSadTear} />
+                                        </Card.Title>
+                                    </Card.Body>
+                                    <Card.Footer>
+                                        <Link to='/'>
+                                            <Button variant="success">
+                                                Ir a productos
+                                            </Button>
+                                        </Link>
+                                    </Card.Footer>
+                                </Card>
                             </Col>
                         </Row>
-
                     </>
                     :
                     <>
-                        {/* {cart.map(article => <CartItem key={article.item.id} article={article} className="mt-15"></CartItem>)} */}
                         <table className="table tableHover">
                             <thead>
                                 <tr>

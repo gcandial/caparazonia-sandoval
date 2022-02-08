@@ -1,7 +1,7 @@
 import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
 
 function ItemCount({ stock, contador, setContador, agregaCarrito, mensajeCarrito }) {
     const stockDisponible = stock;

@@ -7,12 +7,13 @@ import { cartContext } from "../context/CartProvider";
 function CartWidget() {
 
   const { cart } = useContext(cartContext);
-
+  const showCartWidget = (cart.length > 0) ? 'block' : 'none' ;
   return (
     <>
-      <Link to="/cart">
+      <Link to="/cart" style={{display: showCartWidget}}>
         <span><FontAwesomeIcon icon={faShoppingCart} /> {cart.length}</span>
       </Link>
+
     </>
   );
 }
