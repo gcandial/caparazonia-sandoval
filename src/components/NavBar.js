@@ -9,7 +9,6 @@ function NavBar() {
       <ReactBootstrap.Navbar bg="dark" variant="dark">
         <ReactBootstrap.Container>
           <Link to='/' className="navbar-brand">Caparazonia</Link>
-          {/* <ReactBootstrap.Navbar.Brand to="/">Caparazonia</ReactBootstrap.Navbar.Brand> */}
           <ReactBootstrap.Navbar.Toggle aria-controls="caparazonia-navbar" />
           <ReactBootstrap.Navbar.Collapse id="caparazonia-navbar" className="justify-content-end">
             <ReactBootstrap.Nav className="me-auto">
