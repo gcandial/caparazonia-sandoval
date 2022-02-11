@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
 import { Button, Col, Row, Card } from 'react-bootstrap';
 import { cartContext } from "../context/CartProvider";
@@ -8,7 +8,13 @@ import { faSadTear } from '@fortawesome/free-solid-svg-icons';
 
 const Cart = () => {
 
-    const { cart, clear } = useContext(cartContext);
+    const { cart, clear, calculateTotal } = useContext(cartContext);
+    const [total, setTotal] = useState(0);
+
+    useEffect(() => {
+        if (cart.length > 0)
+            setTotal(calculateTotal());
+    }, [cart.length, calculateTotal]);
 
     return (
         <>
@@ -49,6 +55,15 @@ const Cart = () => {
                             <tbody>
                                 {cart.map(article => <CartItem key={article.item.id} article={article} className="mt-15"></CartItem>)}
                             </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th>TOTAL</th>
+                                    <th>$ {total} MXN</th>
+                                </tr>
+                            </tfoot>
                         </table>
 
                         <Row className="text-end mt-15">

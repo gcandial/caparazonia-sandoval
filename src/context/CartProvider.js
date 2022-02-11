@@ -3,6 +3,7 @@ import React, { createContext, useState } from "react";
 export const cartContext = createContext();
 
 const CartProvider = ({ children }) => {
+
     const [cart, setCart] = useState([]);
 
     const addItem = (item, quantity) => {
@@ -28,8 +29,12 @@ const CartProvider = ({ children }) => {
         setCart([]);
     };
 
+    const calculateTotal = () => {
+        return cart.map(article => article.item.price * article.quantity).reduce((a, b) => a + b);
+    };
+
     return (
-        <cartContext.Provider value={{ cart, addItem, isInCart, removeItem, clear }}>
+        <cartContext.Provider value={{ cart, addItem, isInCart, removeItem, clear, calculateTotal }}>
             {children}
         </cartContext.Provider>
     )

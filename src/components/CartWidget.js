@@ -13,7 +13,6 @@ function CartWidget() {
       <Link to="/cart" style={{display: showCartWidget}}>
         <span><FontAwesomeIcon icon={faShoppingCart} /> {cart.length}</span>
       </Link>
-
     </>
   );
 }
