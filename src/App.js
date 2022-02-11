@@ -2,12 +2,11 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { Container, Row } from 'react-bootstrap';
-import ItemListContainer from './components/ItemListContainer';
-import ItemDetailContainer from './components/ItemDetailContainer';
-import Categoria from './components/Categoria';
 import NavBar from './components/NavBar';
 import Cart from './components/Cart';
 import CartContext from './context/CartProvider';
+import CollectionFirebase from './components/CollectionFirebase';
+import ItemFirebase from './components/ItemFirebase';
 
 function App() {
   return (
@@ -19,15 +18,15 @@ function App() {
             <Switch>
               {/* Ruta Inicio */}
               <Route exact path="/">
-                <Row><ItemListContainer /></Row>
+                <Row><CollectionFirebase /></Row>
               </Route>
               {/* Ruta Producto */}
               <Route path="/item/:itemId">
-                <Row><ItemDetailContainer /></Row>
+                <Row><ItemFirebase /></Row>
               </Route>
               {/* Ruta Categoría */}
               <Route path="/categoria/:categoryId">
-                <Row><Categoria /></Row>
+                <Row><CollectionFirebase /></Row>
               </Route>
               {/* Ruta Cart */}
               <Route path="/cart">
