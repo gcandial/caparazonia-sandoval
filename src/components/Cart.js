@@ -1,10 +1,10 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSadTear } from '@fortawesome/free-solid-svg-icons';
 import { Button, Col, Row, Card } from 'react-bootstrap';
 import { cartContext } from "../context/CartProvider";
 import CartItem from "./CartItem";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSadTear } from '@fortawesome/free-solid-svg-icons';
 
 const Cart = () => {
 
@@ -68,7 +68,8 @@ const Cart = () => {
 
                         <Row className="text-end mt-15">
                             <Col>
-                                <Button onClick={() => clear()}>Limpiar carrito</Button>
+                                <Button onClick={() => clear()} style={{ marginRight: '10px' }} variant="warning">Limpiar carrito</Button>
+                                <Link to='/buyform' ><Button variant="success">Finalizar compra</Button></Link>
                             </Col>
                         </Row>
                     </>

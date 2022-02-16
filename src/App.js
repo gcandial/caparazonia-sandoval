@@ -1,13 +1,14 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import { Section, Container, Row } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import Cart from './components/Cart';
 import CartContext from './context/CartProvider';
 import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer';
+import BuyForm from './components/BuyForm';
 
 function App() {
   return (
@@ -33,6 +34,10 @@ function App() {
                 {/* Ruta Cart */}
                 <Route path="/cart">
                   <Row><Cart /></Row>
+                </Route>
+                {/* Ruta BuyForm */}
+                <Route path="/buyform">
+                  <Row><BuyForm /></Row>
                 </Route>
               </Switch>
             </Container>
