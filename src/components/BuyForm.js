@@ -4,6 +4,7 @@ import firebase from "firebase/app";
 import "firebase/firestore";
 import { getFirestore } from '../firebase/firebase';
 import { cartContext } from "../context/CartProvider";
+import '../App.css';
 
 const BuyForm = () => {
 
@@ -50,22 +51,24 @@ const BuyForm = () => {
             .catch((err) => {
                 console.log(err);
             });
-
     }
 
     return (
         <>
-            {orderId && (<h1>Se ingresó con éxito la orden, tú número de orden es: {orderId}</h1>)}
+            {orderId && (<h1 className="text-white text-center">Se ingresó con éxito la orden, tú número es: {orderId}</h1>)}
             <Row className="text-center mt-15">
                 <Col>
-                    <h3 style={{ margin: '25px' }}>Ingresa tus datos:</h3>
-
+                    <h3 className="py-4 mt-15 text-white">INGRESA TUS DATOS:</h3>
+                </Col>
+            </Row>
+            <Row className="justify-content-lg-center mt-15">
+                <Col className="col col-lg-6">
                     <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Control type="text" name="name" ref={nameRef} placeholder="Ingrese nombre y Apelllido" />
+                        <Form.Control type="text" name="name" ref={nameRef} placeholder="Ingrese nombre y apelllido" />
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Control type="text" name="mobile" ref={mobileRef} placeholder="Ingrese número de Celular" />
+                        <Form.Control type="text" name="mobile" ref={mobileRef} placeholder="Ingrese número de celular" />
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -83,11 +86,10 @@ const BuyForm = () => {
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Control type="text" name="address" ref={addressRef} placeholder="Ingrese dirección" />
                     </Form.Group>
-                </Col>
-            </Row>
-            <Row className="text-end" style={{ marginTop: '15px' }}>
-                <Col>
-                    <Button onClick={() => handleClick()} variant="success">Finalizar compra :D</Button>
+
+                    <Form.Group className="mb-3 py-3 text-end">
+                        <Button onClick={() => handleClick()} variant="primary">Finalizar compra :D</Button>
+                    </Form.Group>
                 </Col>
             </Row>
         </>

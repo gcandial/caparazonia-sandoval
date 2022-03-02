@@ -16,28 +16,28 @@ function App() {
       <CartContext>
         <BrowserRouter>
           <NavBar />
-          <div id='main' style={{ minHeight: '100vh' }}>
+          <div id='main'>
             <Container>
               <Switch>
                 {/* Ruta Inicio */}
                 <Route exact path="/">
-                  <Row><ItemListContainer /></Row>
+                  <Row className='py-5'><ItemListContainer /></Row>
                 </Route>
                 {/* Ruta Producto */}
                 <Route path="/item/:itemId">
-                  <Row><ItemDetailContainer /></Row>
+                  <Row className='py-5'><ItemDetailContainer /></Row>
                 </Route>
                 {/* Ruta Categoría */}
                 <Route path="/categoria/:categoryId">
-                  <Row><ItemListContainer /></Row>
+                  <Row className='py-5'><ItemListContainer /></Row>
                 </Route>
                 {/* Ruta Cart */}
                 <Route path="/cart">
-                  <Row><Cart /></Row>
+                  <Row className='py-5'><Cart /></Row>
                 </Route>
                 {/* Ruta BuyForm */}
                 <Route path="/buyform">
-                  <Row><BuyForm /></Row>
+                  <Row className='py-5'><BuyForm /></Row>
                 </Route>
               </Switch>
             </Container>

@@ -4,9 +4,7 @@ import Item from "./Item";
 function ItemList({ items }) {
     return (
         <>
-            {
-                <Item item={items}></Item>
-            }
+            <Item item={items}></Item>
         </>
     );
 }

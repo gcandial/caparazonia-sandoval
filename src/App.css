@@ -1,3 +1,8 @@
+#main {
+  min-height: 100vh;
+  background-image: url('./img/yumo_1920_1280_opaco.jpg');
+}
+
 .App {
   text-align: center;
 }
@@ -39,4 +44,62 @@
 
 .mt-15 {
   margin-top: 20px;
+}
+
+#col-item {
+  padding: 3px;
+  margin: 5px;
+}
+
+.card-list {
+  width: 18rem;
+  text-align: center;
+}
+
+.cartTable > thead > tr > th {
+  color: white;
+  font-size: 25px;
+}
+
+.cartTable > tbody > tr > td {
+  color: white;
+  font-size: 22px;
+}
+
+.cartTable > tfoot > tr > th {
+  color: white;
+  font-size: 22px;
+}
+
+#col-detail {
+  padding: 5px;
+  margin: 5px;
+}
+
+#row-detail {
+  background-color: #FFFC;
+  padding: 15px 0px;
+}
+
+#card-detail {
+  height: 100%;
+}
+
+#buttons-item-detail {
+  padding: 25px 0px;
+}
+
+#input-detail {
+  padding: 3px;
+  margin: 5px;
+  width: 35px;
+  text-align: center;
+}
+
+.pink {
+  color: pink;
+}
+
+#btn-limpiar {
+  margin-right: 10px;
 }

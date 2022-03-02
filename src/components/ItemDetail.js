@@ -2,6 +2,7 @@ import { useContext, useState } from 'react';
 import { Card, Col, Row } from 'react-bootstrap';
 import ItemCount from './ItemCount';
 import { cartContext } from "../context/CartProvider";
+import '../App.css';
 
 function ItemDetail({ producto }) {
 
@@ -20,16 +21,16 @@ function ItemDetail({ producto }) {
             {
                 (producto.id) ?
                     <>
-                        <Col style={{ padding: '5px', margin: '10px' }}>
-                            <Row>
+                        <Col id="col-detail">
+                            <Row id="row-detail">
                                 <Col>
                                     <Card.Img variant="top" src={producto.pictureURL} />
                                 </Col>
                                 <Col>
-                                    <Card>
+                                    <Card id="card-detail">
                                         <Card.Body>
-                                            <Card.Title><h2>{producto.title}</h2></Card.Title>
-                                            <h4>$ {producto.price} MXN</h4>
+                                            <Card.Title className='pt-3'><h2>{producto.title}</h2></Card.Title>
+                                            <h4 className='py-0'>$ {producto.price} MXN</h4>
                                             <ItemCount stock={producto.stock} contador={contador} setContador={setContador} agregaCarrito={agregaCarrito} mensajeCarrito={mensajeCarrito}></ItemCount>
                                         </Card.Body>
                                         <Card.Footer>

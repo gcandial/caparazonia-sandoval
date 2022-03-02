@@ -5,6 +5,7 @@ import { faSadTear } from '@fortawesome/free-solid-svg-icons';
 import { Button, Col, Row, Card } from 'react-bootstrap';
 import { cartContext } from "../context/CartProvider";
 import CartItem from "./CartItem";
+import '../App.css';
 
 const Cart = () => {
 
@@ -42,7 +43,7 @@ const Cart = () => {
                     </>
                     :
                     <>
-                        <table className="table tableHover">
+                        <table className="table tableHover cartTable">
                             <thead>
                                 <tr>
                                     <th>Producto</th>
@@ -68,7 +69,7 @@ const Cart = () => {
 
                         <Row className="text-end mt-15">
                             <Col>
-                                <Button onClick={() => clear()} style={{ marginRight: '10px' }} variant="warning">Limpiar carrito</Button>
+                                <Button id="btn-limpiar" onClick={() => clear()} variant="warning">Limpiar carrito</Button>
                                 <Link to='/buyform' ><Button variant="success">Finalizar compra</Button></Link>
                             </Col>
                         </Row>
