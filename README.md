@@ -5,7 +5,6 @@
 Al finalizar la compra se llena un formulario con datos generales del usuario y los envía a firebase, si se generó con éxito la orden, aparece el mensaje de la orden generada.
 
 # Estructura de proyecto
-## App
 - Navbar
 - ItemListContainer
     * ItemList
