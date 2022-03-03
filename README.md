@@ -5,18 +5,18 @@
 Al finalizar la compra se llena un formulario con datos generales del usuario y los envía a firebase, si se generó con éxito la orden, aparece el mensaje de la orden generada.
 
 # Estructura de proyecto
-App
-    - Navbar
-    - ItemListContainer
-        * ItemList
-            * Item
-    - ItemDetailContainer
-        * ItemDetail
-            * ItemCount
-    - Cart
-        * CartItem
-    - BuyForm
-    - Footer
+## App
+- Navbar
+- ItemListContainer
+    * ItemList
+        * Item
+- ItemDetailContainer
+    * ItemDetail
+        * ItemCount
+- Cart
+    * CartItem
+- BuyForm
+- Footer
 
 # Implementación de context
 Se utilizó el componente Context.Provider para compartir funciones y valores en los componentes renderizados dentro de éste componente y así poder acceder según se requiera.
