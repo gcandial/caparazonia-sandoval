@@ -1,70 +1,32 @@
-# Getting Started with Create React App
+# Resumen de proyecto
+- El proyecto actual es una tienda de productos para mascotas que incluye productos generales para ejemplificar el funcionamiento, se tienen los items y se puede ver su detalle al dar click al botón que dirige a dicha vista. 
+- Una vez que se encuentra en la vista de detalle, se puede seleccionar cuántos productos agregar al carrito, se tiene como límite los de existencia, si el usuario agrega artículos al carrito, se cambia el botón para poder terminar la compra y dirige al carrito de ventas.
+- El widget del carrito solo se muestra si se ha agregado al menos un producto, una vez que se va al listado de productos, se puede eliminar del carrito, limpiar completo o finalizar la compra.
+Al finalizar la compra se llena un formulario con datos generales del usuario y los envía a firebase, si se generó con éxito la orden, aparece el mensaje de la orden generada.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Estructura de proyecto
+App
+    - Navbar
+    - ItemListContainer
+        * ItemList
+            * Item
+    - ItemDetailContainer
+        * ItemDetail
+            * ItemCount
+    - Cart
+        * CartItem
+    - BuyForm
+    - Footer
 
-## Available Scripts
+# Implementación de context
+Se utilizó el componente Context.Provider para compartir funciones y valores en los componentes renderizados dentro de éste componente y así poder acceder según se requiera.
 
-In the project directory, you can run:
+# Implementación de bootstrap
+Para dar estructura a través de grid, se usó bootstrap para usar componentes y clases ya definidos, como lo son las columnas, las filas, los card y el margin y padding entre componentes.
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Implementación de firebase
+Se implementó firebase para crear los documentos que se visualizan como cards en la vista de la página y tienen la función de ser productos.
+- Antes de cargar los productos se hace la consulta y de tal forma obtiene del documento creado, la colección de los items.
+- Se puede hacer uso de la consulta por filtro o por producto específico.
+- De igual forma se implementó un formulario para finalizar la compra y poder guardar en otro documento los datos básicos del usuario, así mismo, su colección que incluye
+un arreglo del carrito 
