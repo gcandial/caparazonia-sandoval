@@ -9,10 +9,11 @@ import '../App.css';
 function NavBar() {
   return (
     <>
-      <ReactBootstrap.Navbar bg="dark" variant="dark">
+      <ReactBootstrap.Navbar bg="dark" variant="dark" expand="lg">
         <ReactBootstrap.Container>
           <Link to='/' className="navbar-brand"><FontAwesomeIcon icon={faPaw} /> CAPARAZONIA</Link>
           <ReactBootstrap.Navbar.Toggle aria-controls="caparazonia-navbar" />
+          <CartWidget />
           <ReactBootstrap.Navbar.Collapse id="caparazonia-navbar" className="justify-content-end">
             <ReactBootstrap.Nav className="me-auto">
               <Link to='/' className="nav-link"><span className="pink">Inicio</span></Link>
@@ -20,9 +21,6 @@ function NavBar() {
               <Link to="/categoria/articulos-perro" className="nav-link"><span className="pink">Artículos para perro</span></Link>
               <Link to="/categoria/juguetes-perro" className="nav-link"><span className="pink">Juguetes para perro</span></Link>
             </ReactBootstrap.Nav>
-            <ReactBootstrap.Navbar.Text >
-              <CartWidget />
-            </ReactBootstrap.Navbar.Text>
           </ReactBootstrap.Navbar.Collapse>
         </ReactBootstrap.Container>
       </ReactBootstrap.Navbar>

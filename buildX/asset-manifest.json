@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/yumosoft.com/caparazonia/static/css/main.83a4e057.css",
+    "main.js": "/yumosoft.com/caparazonia/static/js/main.21aa935b.js",
+    "static/js/787.d123178d.chunk.js": "/yumosoft.com/caparazonia/static/js/787.d123178d.chunk.js",
+    "static/media/yumo_1920_1280_opaco.jpg": "/yumosoft.com/caparazonia/static/media/yumo_1920_1280_opaco.e78ad91ff0eed5593987.jpg",
+    "index.html": "/yumosoft.com/caparazonia/index.html",
+    "main.83a4e057.css.map": "/yumosoft.com/caparazonia/static/css/main.83a4e057.css.map",
+    "main.21aa935b.js.map": "/yumosoft.com/caparazonia/static/js/main.21aa935b.js.map",
+    "787.d123178d.chunk.js.map": "/yumosoft.com/caparazonia/static/js/787.d123178d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.83a4e057.css",
+    "static/js/main.21aa935b.js"
+  ]
+}

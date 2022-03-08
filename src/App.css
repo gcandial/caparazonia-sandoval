@@ -47,7 +47,7 @@
 }
 
 #col-item {
-  padding: 3px;
+  /* padding: 3px; */
   margin: 5px;
 }
 
@@ -58,17 +58,17 @@
 
 .cartTable > thead > tr > th {
   color: white;
-  font-size: 25px;
+  /* font-size: 25px; */
 }
 
 .cartTable > tbody > tr > td {
   color: white;
-  font-size: 22px;
+  /* font-size: 22px; */
 }
 
 .cartTable > tfoot > tr > th {
   color: white;
-  font-size: 22px;
+  /* font-size: 22px; */
 }
 
 #col-detail {
@@ -102,4 +102,8 @@
 
 #btn-limpiar {
   margin-right: 10px;
+}
+
+.center-element {
+  text-align: -webkit-center !important;
 }

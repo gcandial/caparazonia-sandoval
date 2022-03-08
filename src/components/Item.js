@@ -6,7 +6,7 @@ import '../App.css';
 function Item({ item }) {
     return (
         <>
-            <Col id="col-item">
+            <Col id="col-item" className='center-element'>
                 <Card className="card-list">
                     <Card.Header className='py-3'><h5>{item.title.toUpperCase()}</h5></Card.Header>
                     <Card.Img variant="top" src={item.pictureURL} />

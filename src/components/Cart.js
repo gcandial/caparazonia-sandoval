@@ -21,29 +21,31 @@ const Cart = () => {
         <>
             {
                 (cart.length === 0) ?
-                    <>
-                        <Row className="text-center">
-                            <Col>
-                                <Card className="mt-15" border="secondary">
-                                    <Card.Body>
-                                        <Card.Title>
-                                            Aún no hay productos agregados <FontAwesomeIcon icon={faSadTear} />
-                                        </Card.Title>
-                                    </Card.Body>
-                                    <Card.Footer>
-                                        <Link to='/'>
-                                            <Button variant="success">
-                                                Ir a productos
-                                            </Button>
-                                        </Link>
-                                    </Card.Footer>
-                                </Card>
-                            </Col>
-                        </Row>
+                    <>  
+                        <center>
+                        <Row className="text-center center-element">
+                                <Col>
+                                    <Card className="mt-15" border="secondary">
+                                        <Card.Body>
+                                            <Card.Title>
+                                                Aún no hay productos agregados <FontAwesomeIcon icon={faSadTear} />
+                                            </Card.Title>
+                                        </Card.Body>
+                                        <Card.Footer>
+                                            <Link to='/'>
+                                                <Button variant="success">
+                                                    Ir a productos
+                                                </Button>
+                                            </Link>
+                                        </Card.Footer>
+                                    </Card>
+                                </Col>
+                            </Row>
+                        </center>                        
                     </>
                     :
                     <>
-                        <table className="table tableHover cartTable">
+                        <table striped bordered hover size="sm" className="cartTable center-element m-1">
                             <thead>
                                 <tr>
                                     <th>Producto</th>
